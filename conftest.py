@@ -9,6 +9,5 @@ def driver():
     options.add_argument('--enable-javascript')
     _driver = webdriver.Chrome(options=options)
     _driver.minimize_window()
-    _driver.get('http://uitestingplayground.com')
     yield _driver
     _driver.quit()

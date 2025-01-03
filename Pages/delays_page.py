@@ -16,4 +16,4 @@ class DelaysPage(BasePage):
 
     @allure.step("Проверить отображение кнопки 'Button Appearing After Delay'")
     def check_delayed_btn(self) -> None:
-        self.element_is_visible(self.delayed_button)
+        self.element_is_displayed(self.delayed_button)

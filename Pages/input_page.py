@@ -7,17 +7,8 @@ class InputPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, timeout=60)
 
-    page_link = (By.XPATH, '//*[@href="/textinput"]')
     input_field = (By.XPATH, '//*[@class="form-control"]')
     named_btn = (By.XPATH, '//*[@class="btn btn-primary"]')
-
-    @allure.step("Нажать на ссылку 'Text Input'")
-    def click_input_page(self) -> None:
-        self.click_element(self.page_link)
-
-    # @allure.step("Нажать на поле ввода")
-    # def click_input_field(self):
-    #     self.click_element(self.input_field)
 
     @allure.step("Ввести новое значение")
     def insert_new_value(self, value: str) -> None:
