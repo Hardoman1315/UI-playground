@@ -10,6 +10,9 @@ class DynamicTablePage(BasePage):
     warning_text = (By.XPATH, '//*[@class="bg-warning"]')
     chrome_text = (By.XPATH, '//*[text()="Chrome"]/..//*[contains(text(), "%")]')
 
+    @allure.step("Открыть целевую страницу")
+    def open_target_page(self) -> None:
+        self.open_page('http://uitestingplayground.com/dynamictable')
 
     @allure.step("Получить нагрузку Chrome на процессор")
     def get_chrome_cpu(self) -> str:

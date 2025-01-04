@@ -31,3 +31,5 @@ class BasePage:
             '[FAILED] requested element is not displayed'
         )
 
+    def open_page(self, url: str) -> None:
+        self.driver.get(url)

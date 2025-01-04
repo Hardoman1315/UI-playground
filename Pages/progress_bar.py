@@ -13,6 +13,9 @@ class ProgressBar(BasePage):
     progress_bar_counter = (By.XPATH, '//*[@id="progressBar"]')
     result = (By.XPATH, '//*[@id="result"]')
 
+    @allure.step("Открыть целевую страницу")
+    def open_target_page(self) -> None:
+        self.open_page('http://uitestingplayground.com/progressbar')
 
     @allure.step('Нажать кнопку "Start"')
     def click_start_btn(self) -> None:

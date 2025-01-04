@@ -10,6 +10,11 @@ class InputPage(BasePage):
     input_field = (By.XPATH, '//*[@class="form-control"]')
     named_btn = (By.XPATH, '//*[@class="btn btn-primary"]')
 
+
+    @allure.step("Открыть целевую страницу")
+    def open_target_page(self) -> None:
+        self.open_page('http://uitestingplayground.com/textinput')
+
     @allure.step("Ввести новое значение")
     def insert_new_value(self, value: str) -> None:
         self.insert_value(self.input_field, value)

@@ -9,6 +9,9 @@ class UnbreakableSpaces(BasePage):
 
     nbsp_btn = (By.XPATH, f'//button[text()="My{"\u00A0"}Button"]')
 
+    @allure.step("Открыть целевую страницу")
+    def open_target_page(self) -> None:
+        self.open_page('http://uitestingplayground.com/nbsp')
 
     @allure.step("Проверить наличие кнопки с неразрывным пробелом")
     def check_nbsp_btn(self) -> None:

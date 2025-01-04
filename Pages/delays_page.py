@@ -10,6 +10,10 @@ class DelaysPage(BasePage):
     page_link = (By.XPATH, '//*[@href="/loaddelay"]')
     delayed_button = (By.XPATH, '//*[@class="btn btn-primary"]')
 
+    @allure.step("Открыть целевую страницу")
+    def open_target_page(self) -> None:
+        self.open_page('http://uitestingplayground.com')
+
     @allure.step("Нажать на ссылку 'Load Delay'")
     def click_delay_page(self) -> None:
         self.click_element(self.page_link)
