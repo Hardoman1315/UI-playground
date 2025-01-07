@@ -35,9 +35,10 @@ class Tests:
         input_page.insert_new_value('New button name')
         input_page.click_named_btn()
         new_name = input_page.get_btn_name()
-        assert old_name != new_name, (
-            '[FAILED] Button name stays the same'
-        )
+        with allure.step("Проверить что название кнопки изменилось"):
+            assert old_name != new_name, (
+                '[FAILED] Button name stays the same'
+            )
 
     @allure.title('Проверить работу с динамически генерируемыми таблицами')
     def test_dynamic_tables(self, driver):

@@ -7,13 +7,14 @@ class InputPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, timeout=60)
 
+    url = 'http://uitestingplayground.com/textinput'
     input_field = (By.XPATH, '//*[@class="form-control"]')
     named_btn = (By.XPATH, '//*[@class="btn btn-primary"]')
 
 
     @allure.step("Открыть целевую страницу")
     def open_target_page(self) -> None:
-        self.open_page('http://uitestingplayground.com/textinput')
+        self.open_page(self.url)
 
     @allure.step("Ввести новое значение")
     def insert_new_value(self, value: str) -> None:

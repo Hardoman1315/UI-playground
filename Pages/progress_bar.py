@@ -8,6 +8,7 @@ class ProgressBar(BasePage):
     def __init__(self, driver):
         super().__init__(driver, timeout=60)
 
+    url = 'http://uitestingplayground.com/progressbar'
     start_btn = (By.XPATH, '//*[@id="startButton"]')
     stop_btn = (By.XPATH, '//*[@id="stopButton"]')
     progress_bar_counter = (By.XPATH, '//*[@id="progressBar"]')
@@ -15,7 +16,7 @@ class ProgressBar(BasePage):
 
     @allure.step("Открыть целевую страницу")
     def open_target_page(self) -> None:
-        self.open_page('http://uitestingplayground.com/progressbar')
+        self.open_page(self.url)
 
     @allure.step('Нажать кнопку "Start"')
     def click_start_btn(self) -> None:

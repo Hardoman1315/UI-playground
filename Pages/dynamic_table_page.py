@@ -7,12 +7,13 @@ class DynamicTablePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, timeout=60)
 
+    url = 'http://uitestingplayground.com/dynamictable'
     warning_text = (By.XPATH, '//*[@class="bg-warning"]')
     chrome_text = (By.XPATH, '//*[text()="Chrome"]/..//*[contains(text(), "%")]')
 
     @allure.step("Открыть целевую страницу")
     def open_target_page(self) -> None:
-        self.open_page('http://uitestingplayground.com/dynamictable')
+        self.open_page(self.url)
 
     @allure.step("Получить нагрузку Chrome на процессор")
     def get_chrome_cpu(self) -> str:
